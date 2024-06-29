@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+  <meta charset="UTF-8"/>
+  <title>一键多搜</title>
+  <script type="text/javascript">
+    function test(){
+      var search=document.getElementById("search").value;
+      console.log(search);
+      var url_bing = "https://cn.bing.com/search?q="+search+"&form=QBLH&sp=-1&lq=0&pq=bsfs&sc=10-4&qs=n";
+      var url_so = "https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="+search;
+      var url_fsoufsou = "https://fsoufsou.com/search?q="+search+"&tbn=all";
+      var url_kaifa_baidu = "https://kaifa.baidu.com/searchPage?wd="+search;
+      var url_yandex = "https://yandex.com/search/?text="+search;
+      var url_wolframalpha = "https://www.wolframalpha.com/input?i2d=true&i="+search;
+      var url_weixin_sogou = "https://weixin.sogou.com/weixin?ie=utf8&s_from=input&_sug_=y&_sug_type_=&type=2&query="+search+"&w=01019900&sut=890&sst0=1688693363683&lkt=1%2C1688693363579%2C1688693363579";
+      var url_sogou = "http://www.sogou.com/web?ie=utf8&query="+search;
+      var url_baidu = "https://www.baidu.com/s?wd="+search;
+      if (document.getElementById("bing").checked) {
+        window.open(url_bing);}
+      if (document.getElementById("so").checked) {
+	  window.open(url_so);}
+	  if (document.getElementById("fsoufsou").checked) {
+      window.open(url_fsoufsou);}
+      if (document.getElementById("kaifa_baidu").checked) {
+      window.open(url_kaifa_baidu);}
+      if (document.getElementById("yandex").checked) {
+      window.open(url_yandex);}
+      if (document.getElementById("wolframalpha").checked) {
+      window.open(url_wolframalpha);}
+      if (document.getElementById("weixin_sogou").checked) {
+      window.open(url_weixin_sogou);}
+      if (document.getElementById("sogou").checked) {
+      window.open(url_sogou);}
+      if (document.getElementById("baidu").checked) {
+      window.open(url_baidu);}
+  }
+    // 键盘事件触发时，浏览器天生自带一个叫keyboardEvent对象，所有键盘信息都在这个对象上,即ev
+    // 靠keycode来识别你按哪个键
+    document.addEventListener('keyup',function (e)
+    { //添加监听
+      if(e.key== "Enter" && e.target.id=='search') //判断输入是否是Enter
+      {        //alert(e.key);//弹出输入内容
+        document.getElementById('down').click();//点击按钮
+      }
+    })
+  </script>
+
+</head>
+
+<body>
+<label for="search"></label>
+<input type="text" name="search_string" style="width:60%" id="search" value="空白" />
+  <button id = "down" onclick="test()"  onkeydown="render()">一键多搜</button>
+<fieldset style="width:60%">
+  <legend>选择搜索引擎:</legend>
+  <div>
+    <input type="checkbox" id="bing" name="bing" checked />
+    <label for="bing">bing</label>
+  </div>
+  <div>
+    <input type="checkbox" id="so" name="so" checked />
+    <label for="so">360搜索</label>
+  </div>
+  <div>
+    <input type="checkbox" id="fsoufsou" name="fsoufsou"  />
+    <label for="fsoufsou">fsoufsou</label>
+  </div>
+  <div>
+    <input type="checkbox" id="kaifa_baidu" name="kaifa_baidu" />
+    <label for="kaifa_baidu">百度开发搜代码</label>
+  </div>
+  <div>
+    <input type="checkbox" id="yandex" name="yandex"  />
+    <label for="yandex">yandex</label>
+  </div>
+  <div>
+    <input type="checkbox" id="wolframalpha" name="wolframalpha" />
+    <label for="wolframalpha">wolframalpha</label>
+  </div>
+  <div>
+    <input type="checkbox" id="weixin_sogou" name="weixin_sogou" checked />
+    <label for="weixin_sogou">搜狗搜微信</label>
+  </div>
+  <div>
+    <input type="checkbox" id="sogou" name="sogou" checked />
+    <label for="sogou">搜狗搜网页</label>
+  </div>
+  <div>
+    <input type="checkbox" id="baidu" name="baidu" checked />
+    <label for="baidu">百度搜网页</label>
+  </div>
+</fieldset>
+<hr />
+
+</body>
+</html>
