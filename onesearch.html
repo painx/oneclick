@@ -3,7 +3,73 @@
 <head>
   <meta charset="UTF-8"/>
   <title>一键多搜</title>
+  <style>
+    /* 全局样式 */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* 输入框和按钮样式 */
+    input[type="text"] {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* 复选框样式 */
+    fieldset {
+      width: 60%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    /* 分割线样式 */
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+/**/
+
+  </style>
+
+
   <script type="text/javascript">
+    // 定义一个函数，用于获取输入框中的值，并打开相应的搜索页面
     function test(){
       var search=document.getElementById("search").value;
       console.log(search);
