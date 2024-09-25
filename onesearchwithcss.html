@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+    <meta charset="UTF-8"/>
+    <title>一键多搜</title>
+    <style>    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        width: 60%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"] {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 15px 30px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .options-container {
+        width: 60%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    legend {
+        font-weight: bold;
+        font-size: 20px;
+        color: #333;
+        padding: 0 10px;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .option label {
+        font-size: 16px;
+        color: #333;
+        margin-left: 10px;
+    }
+
+    hr {
+        width: 60%;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+    }
+    </style>
+    <script type="text/javascript">    function test(){
+        var search=document.getElementById("search").value;
+        console.log(search);
+        var url_bing = "https://cn.bing.com/search?q="+search+"&form=QBLH&sp=-1&lq=0&pq=bsfs&sc=10-4&qs=n";
+        var url_so = "https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome&q="+search;
+        var url_fsoufsou = "https://fsoufsou.com/search?q="+search+"&tbn=all";
+        var url_kaifa_baidu = "https://kaifa.baidu.com/searchPage?wd="+search;
+        var url_yandex = "https://yandex.com/search/?text="+search;
+        var url_wolframalpha = "https://www.wolframalpha.com/input?i2d=true&i="+search;
+        var url_weixin_sogou = "https://weixin.sogou.com/weixin?ie=utf8&s_from=input&_sug_=y&_sug_type_=&type=2&query="+search+"&w=01019900&sut=890&sst0=1688693363683&lkt=1%2C1688693363579%2C1688693363579";
+        var url_sogou = "http://www.sogou.com/web?ie=utf8&query="+search;
+        var url_baidu = "https://www.baidu.com/s?wd="+search;
+        if (document.getElementById("bing").checked) {
+            window.open(url_bing);}
+        if (document.getElementById("so").checked) {
+            window.open(url_so);}
+        if (document.getElementById("fsoufsou").checked) {
+            window.open(url_fsoufsou);}
+        if (document.getElementById("kaifa_baidu").checked) {
+            window.open(url_kaifa_baidu);}
+        if (document.getElementById("yandex").checked) {
+            window.open(url_yandex);}
+        if (document.getElementById("wolframalpha").checked) {
+            window.open(url_wolframalpha);}
+        if (document.getElementById("weixin_sogou").checked) {
+            window.open(url_weixin_sogou);}
+        if (document.getElementById("sogou").checked) {
+            window.open(url_sogou);}
+        if (document.getElementById("baidu").checked) {
+            window.open(url_baidu);}
+    }
+    // 键盘事件触发时，浏览器天生自带一个叫keyboardEvent对象，所有键盘信息都在这个对象上,即ev
+    // 靠keycode来识别你按哪个键
+    document.addEventListener('keyup',function (e)
+    { //添加监听
+        if(e.key== "Enter" && e.target.id=='search') //判断输入是否是Enter
+        {        //alert(e.key);//弹出输入内容
+            document.getElementById('down').click();//点击按钮
+        }
+    })
+    </script>
+</head>
+
+<body>
+<h1>一键多搜</h1>
+<div class="search-container">
+    <label for="search"></label>
+    <input type="text" name="search_string" id="search" value="" />
+    <button id="down" onclick="test()">一键多搜</button>
+</div>
+<div class="options-container">
+    <fieldset>
+        <legend>选择搜索引擎:</legend>
+        <div class="option">
+            <input type="checkbox" id="bing" name="bing" checked />
+            <label for="bing">bing</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="so" name="so" checked />
+            <label for="so">360搜索</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="fsoufsou" name="fsoufsou" />
+            <label for="fsoufsou">fsoufsou</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="kaifa_baidu" name="kaifa_baidu" />
+            <label for="kaifa_baidu">百度开发搜代码</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="yandex" name="yandex" />
+            <label for="yandex">yandex</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="wolframalpha" name="wolframalpha" />
+            <label for="wolframalpha">wolframalpha</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="weixin_sogou" name="weixin_sogou" checked />
+            <label for="weixin_sogou">搜狗搜微信</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="sogou" name="sogou" checked />
+            <label for="sogou">搜狗搜网页</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="baidu" name="baidu" checked />
+            <label for="baidu">百度搜网页</label>
+        </div>
+    </fieldset>
+</div>
+<hr />
+</body>
+</html>

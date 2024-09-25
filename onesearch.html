@@ -3,73 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <title>一键多搜</title>
-  <style>
-    /* 全局样式 */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-
-    /* 输入框和按钮样式 */
-    input[type="text"] {
-      width: 60%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    /* 复选框样式 */
-    fieldset {
-      width: 60%;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 5px;
-    }
-
-    legend {
-      font-weight: bold;
-    }
-
-    div {
-      margin-bottom: 10px;
-    }
-
-    input[type="checkbox"] {
-      margin-right: 5px;
-    }
-
-    /* 分割线样式 */
-    hr {
-      border: none;
-      border-top: 1px solid #ccc;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-/**/
-
-  </style>
-
-
   <script type="text/javascript">
-    // 定义一个函数，用于获取输入框中的值，并打开相应的搜索页面
     function test(){
       var search=document.getElementById("search").value;
       console.log(search);
@@ -85,22 +19,22 @@
       if (document.getElementById("bing").checked) {
         window.open(url_bing);}
       if (document.getElementById("so").checked) {
-	  window.open(url_so);}
-	  if (document.getElementById("fsoufsou").checked) {
-      window.open(url_fsoufsou);}
+        window.open(url_so);}
+      if (document.getElementById("fsoufsou").checked) {
+        window.open(url_fsoufsou);}
       if (document.getElementById("kaifa_baidu").checked) {
-      window.open(url_kaifa_baidu);}
+        window.open(url_kaifa_baidu);}
       if (document.getElementById("yandex").checked) {
-      window.open(url_yandex);}
+        window.open(url_yandex);}
       if (document.getElementById("wolframalpha").checked) {
-      window.open(url_wolframalpha);}
+        window.open(url_wolframalpha);}
       if (document.getElementById("weixin_sogou").checked) {
-      window.open(url_weixin_sogou);}
+        window.open(url_weixin_sogou);}
       if (document.getElementById("sogou").checked) {
-      window.open(url_sogou);}
+        window.open(url_sogou);}
       if (document.getElementById("baidu").checked) {
-      window.open(url_baidu);}
-  }
+        window.open(url_baidu);}
+    }
     // 键盘事件触发时，浏览器天生自带一个叫keyboardEvent对象，所有键盘信息都在这个对象上,即ev
     // 靠keycode来识别你按哪个键
     document.addEventListener('keyup',function (e)
@@ -117,7 +51,7 @@
 <body>
 <label for="search"></label>
 <input type="text" name="search_string" style="width:60%" id="search" value="" />
-  <button id = "down" onclick="test()"  onkeydown="render()">一键多搜</button>
+<button id = "down" onclick="test()"  onkeydown="render()">一键多搜</button>
 <fieldset style="width:60%">
   <legend>选择搜索引擎:</legend>
   <div>
