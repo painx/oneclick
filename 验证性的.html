@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证JS用的</title>
+</head>
+<body>
+
+
+<script>
+    function drawDiamond(n) {
+        // 上半部分（包括中间行）
+        for (let i = 1; i <= n; i++) {
+            let spaces = ' '.repeat(n - i);
+            let stars = '*'.repeat(2 * i - 1);
+            console.log(spaces + stars);
+        }
+        // 下半部分
+        for (let i = n - 1; i >= 1; i--) {
+            let spaces = ' '.repeat(n - i);
+            let stars = '*'.repeat(2 * i - 1);
+            console.log(spaces + stars);
+        }
+    }
+
+    // 调用函数，参数n为菱形的半高（即最宽处星号的数量）
+    drawDiamond(5);
+</script>
+</body>
+</html>
